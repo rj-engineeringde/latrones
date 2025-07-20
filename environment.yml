@@ -1,0 +1,6 @@
+name: latrones
+channels:
+  - defaults
+dependencies:
+  - python=3.13.5
+  - flask
