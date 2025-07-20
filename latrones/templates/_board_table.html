@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    var GameConfig = {
+        current_turn: '{{ current_turn }}',
+        winner: '{{ winner }}'
+    }
+</script>
+
+{% if move_result == false %}
+    <script type="text/javascript">
+        alert("{{ move_error }}");
+    </script>
+{% endif %}
+
+<table class="board"> <!-- Define a table with CSS class board -->
+    {% for row in board | reverse %} <!-- Iterate over the board variable, that was passed from flask (Python) -->
+        {% set outer_loop = loop %}
+        <tr>
+            {% for piece in row %}
+            <td class="board__square" data-x="{{ loop.index0 }}" data-y="{{ board | length - outer_loop.index }}"> 
+                {% if piece %}
+                    <div class="board__piece board__piece--{{ piece.color }} {% if piece.is_king %}board__piece--king{% endif %}" data-color="{{ piece.color }}"></div>
+                {% endif %}
+            </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

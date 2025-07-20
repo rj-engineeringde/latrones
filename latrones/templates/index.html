@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<!-- Here additional content can be added, e.g. link to google font -->
+{% endblock %}
+
+{% block body %}
+    <!-- Game title -->
+    <h1 class="logotype">Latrones</h1>
+
+    <!-- Play Button -->
+    <nav class="navigation">
+        <a href="{{ url_for('play') }}" class="button">
+            <div>Play</div>
+        </a>
+    </nav>
+{% endblock %}
