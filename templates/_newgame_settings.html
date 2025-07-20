@@ -1,0 +1,73 @@
+<script type="text/javascript">
+    var NewGameSettings = {
+        // bot_level: '{{ bot_level }}', // Bot level setting disabled
+        play_against_bot: '{{ play_against_bot }}',
+        game_time_seconds: '{{ game_time_seconds }}',
+        user_color: '{{ user_color }}'
+    }
+</script>
+
+<div class="settings-container">
+    <!-- Box-Title -->
+    <div class="settings-wrapper">
+        <text class="settings__title"><strong>Game Settings</strong></text>
+    </div>
+
+    <!-- Play Light or Dark -->
+    <div class="settings-wrapper">
+        <label><strong>Choose your side</strong></label>
+        <label>
+            <input type="radio" name="user_color" value="light" checked>
+            White
+        </label>
+        <label>
+            <input type="radio" name="user_color" value="dark">
+            Black
+        </label>
+    </div>
+
+    <!-- Board size -->
+    <div class="settings-wrapper">
+        <div class="settings__label-value-wrapper">
+            <label for="board_size"><strong>Board size</strong></label>
+            <textarea class="settings__value" id="board_size_display" readonly>00</textarea>
+        </div>
+        <input type="range" min="8" max="16" value="12" class="settings__slider" id="board_size">
+    </div>
+
+    <!-- Time -->
+    <div class="settings-wrapper">
+        <div class="settings__label-value-wrapper">
+            <label for="game_time_seconds"><strong>Time</strong></label>
+            <textarea class="settings__value" id="game_time_display" readonly>00:00</textarea>
+        </div>
+        <input type="range" min="30" max="1200" value="600" step="10" class="settings__slider" id="game_time_seconds">
+    </div>
+
+    <!-- Play PvP or against Bot -->
+    <div class="settings-wrapper">
+        <label><strong>Opponent</strong></label>
+        <label>
+            <input type="radio" name="play_against_bot" value="true" checked>
+            CPU
+        </label>
+        <label>
+            <input type="radio" name="play_against_bot" value="false">
+            Person
+        </label>
+    </div>
+
+    <!-- Level --> 
+    <!-- <div class="settings-wrapper"> // Bot level setting disabled
+        <div class="settings__label-value-wrapper">
+            <label for="bot_level"><strong>CPU difficulty</strong></label>
+            <textarea class="settings__value" id="bot_level_display" readonly>00</textarea>
+        </div>
+        <input type="range" min="1" max="5" value="3" class="settings__slider" id="bot_level">
+    </div> -->
+
+    <!-- Start / Restart Game -->
+    <div class="settings-wrapper">
+        <button type="button" class="settings__restart-button" id="new_game_btn"><strong>New Game</strong></button>
+    </div>
+</div>
